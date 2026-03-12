@@ -1,0 +1,12 @@
+[submodule "daemon"]
+	path = daemon
+	url = https://github.com/rpi-seism/daemon.git
+[submodule "web"]
+	path = web
+	url = https://github.com/rpi-seism/web.git
+[submodule "reader"]
+	path = reader
+	url = https://github.com/rpi-seism/reader.git
+[submodule "api"]
+	path = api
+	url = https://github.com/rpi-seism/api.git
