@@ -22,7 +22,7 @@ services:
     ports:
       - 8000:8000
     volumes:
-      - ./data:/usr_data  # Change ./data to the actual path of your data directory on the host ex: /home/user/rpi-seism/data/
+      - ./data:/usr_data:ro  # Change ./data to the actual path of your data directory on the host ex: /home/user/rpi-seism/data/
     restart: unless-stopped
 
   rpi-seism-web:
