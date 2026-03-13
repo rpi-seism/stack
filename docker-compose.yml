@@ -1,0 +1,32 @@
+services:
+  rpi-seism-daemon:
+    build:
+      context: ./daemon
+      dockerfile: Dockerfile
+
+    volumes:
+      - ./data:/app/data  # Change ./data to the actual path of your data directory on the host ex: /home/user/rpi-seism/data/
+    restart: unless-stopped
+
+  rpi-seism-api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+
+    ports:
+      - 8000:8000
+    volumes:
+      - ./data:/usr_data  # Change ./data to the actual path of your data directory on the host ex: /home/user/rpi-seism/data/
+    restart: unless-stopped
+
+  rpi-seism-web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+
+    depends_on:
+      - rpi-seism-api
+
+    ports:
+      - 3000:80
+    restart: unless-stopped
