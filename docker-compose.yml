@@ -4,6 +4,8 @@ services:
       context: ./daemon
       dockerfile: Dockerfile
 
+    ports:
+      - 8765:8765
     volumes:
       - ./data:/app/data  # Change ./data to the actual path of your data directory on the host ex: /home/user/rpi-seism/data/
     devices:
