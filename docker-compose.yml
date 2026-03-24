@@ -7,7 +7,7 @@ services:
     ports:
       - 8765:8765
     volumes:
-      - ./data:/app/data  # Change ./data to the actual path of your data directory on the host ex: /home/user/rpi-seism/data/
+      - ./data/daemon:/app/data  # Change ./data to the actual path of your data directory on the host ex: /home/user/rpi-seism/data/
     devices:
       - /dev/ttyUSB0:/dev/ttyUSB0   # adjust to your port (ttyUSB0, ttyS0, etc.)
     group_add:
@@ -22,7 +22,8 @@ services:
     ports:
       - 8000:8000
     volumes:
-      - ./data:/usr_data:ro  # Change ./data to the actual path of your data directory on the host ex: /home/user/rpi-seism/data/
+      - ./data/daemon:/usr_data:ro  # Change ./data to the actual path of your data directory on the host ex: /home/user/rpi-seism/data/
+      - ./data/api:/app/data
     restart: unless-stopped
 
   rpi-seism-web:
