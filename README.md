@@ -13,9 +13,7 @@ stack/
 ├── reader/     # Arduino firmware   (submodule, reference only)
 ├── api/        # FastAPI archive    (submodule)
 ├── web/        # Angular frontend   (submodule)
-├── docker-compose.yml      # full stack
-├── docker-compose.dev.yml  # dev overrides (fake WebSocket, no hardware)
-└── .env.example            # environment variable template
+└── docker-compose.yml      # full stack
 ```
 
 ---
@@ -23,7 +21,7 @@ stack/
 ## Prerequisites
 
 - Docker + Docker Compose
-- A Raspberry Pi with a USB-RS485 adapter connected to the Arduino digitizer
+- A Raspberry Pi with a USB-RS422 adapter connected to the Arduino digitizer
 - `UID` / `GID` of the user that should own the data files
 
 ---
